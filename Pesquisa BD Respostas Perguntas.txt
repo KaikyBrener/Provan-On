@@ -1,0 +1,136 @@
+
+SELECT
+	Pr.Id as IdProva,
+    Pr.Titulo,
+    A.Id as IdAluno,
+    A.Nome as Aluno,
+    PO.Id as IdPergunta,
+    PO.Titulo as TituloPergunta,
+    PO.Descricao as DescricaoPergunta,
+    PO.OpcaoCorreta,
+    PO.Pontuacao,
+    AR.Resposta,
+    AR.PontuacaoFinal
+FROM
+	PROVA Pr
+    JOIN ALUNO A on Pr.Id = A.IdProva
+	JOIN PERGUNTAOBJETIVA PO ON Pr.Id = PO.IdProva
+    JOIN ALUNORESPOSTAOBJETIVA AR ON PO.Id = AR.IdPerguntaObjetiva AND A.Id = AR.IdAluno
+
+
+
+SELECT
+	Pr.Id as IdProva,
+    Pr.Titulo,
+    A.Id as IdAluno,
+    A.Nome as Aluno,
+    PO.Id as IdPergunta,
+    PO.Titulo as TituloPergunta,
+    PO.Descricao as DescricaoPergunta,
+    PO.OpcaoCorreta,
+    PO.Pontuacao,
+    AR.Resposta,
+    AR.PontuacaoFinal
+FROM
+	PROVA Pr
+    JOIN ALUNO A on Pr.Id = A.IdProva
+	JOIN PERGUNTAOBJETIVA PO ON Pr.Id = PO.IdProva
+    JOIN ALUNORESPOSTAOBJETIVA AR ON PO.Id = AR.IdPerguntaObjetiva AND A.Id = AR.IdAluno
+WHERE
+	Pr.Id = 4
+    and A.Id = 1
+
+-------------------------------------------------------------------------------------------------
+
+
+SELECT
+    Pr.Id AS IdProva,
+    Pr.Titulo,
+    A.Id AS IdAluno,
+    A.Nome AS Aluno,
+    PO.Id AS IdPergunta,
+    PO.Titulo AS TituloPergunta,
+    PO.Descricao AS DescricaoPergunta,
+    PO.OpcaoCorreta,
+    PO.Pontuacao,
+    AR.Resposta,
+    AR.PontuacaoFinal
+FROM
+    Prova Pr
+    JOIN Aluno A ON Pr.Id = A.IdProva
+    JOIN PerguntaObjetiva PO ON Pr.Id = PO.IdProva
+    JOIN AlunoRespostaObjetiva AR ON PO.Id = AR.IdPerguntaObjetiva AND A.Id = AR.IdAluno;
+
+----------------------------------------------------------------------------------------------------
+
+Pontuação do Aluno
+
+SELECT 
+    A.Nome AS Aluno,
+    Pr.Titulo AS Prova,
+    SUM(AR.PontuacaoFinal) AS PontuacaoTotal
+FROM 
+    AlunoRespostaObjetiva AR
+    JOIN Aluno A ON AR.IdAluno = A.Id
+    JOIN PerguntaObjetiva PO ON AR.IdPerguntaObjetiva = PO.Id
+    JOIN Prova Pr ON PO.IdProva = Pr.Id
+WHERE 
+    A.Id = 1
+GROUP BY A.Nome, Pr.Titulo;
+
+-------------------------------------------------------------------------------------------------------
+
+Correção automática das respostas
+
+SELECT
+    A.Nome AS Aluno,
+    PO.Titulo AS Pergunta,
+    AR.Resposta,
+    PO.OpcaoCorreta,
+    CASE 
+        WHEN AR.Resposta = PO.OpcaoCorreta THEN 'Acertou'
+        ELSE 'Errou'
+    END AS Resultado
+FROM 
+    AlunoRespostaObjetiva AR
+    JOIN Aluno A ON AR.IdAluno = A.Id
+    JOIN PerguntaObjetiva PO ON AR.IdPerguntaObjetiva = PO.Id
+WHERE A.Id = 1;
+
+----------------------------------------------------------------------------------------------------------
+
+Lista de opções e perguntas da prova
+
+SELECT 
+    PO.Id,
+    PO.Titulo,
+    PO.Descricao,
+    PO.OpcaoA,
+    PO.OpcaoB,
+    PO.OpcaoC,
+    PO.OpcaoD
+FROM 
+    PerguntaObjetiva PO
+WHERE 
+    PO.IdProva = 4;
+
+--------------------------------------------------------------------------------------------------------------
+
+Histórico completo de resposta de um aluno 
+
+SELECT 
+    A.Nome AS Aluno,
+    Pr.Titulo AS Prova,
+    PO.Titulo AS Pergunta,
+    AR.Resposta,
+    PO.OpcaoCorreta,
+    AR.PontuacaoFinal
+FROM 
+    AlunoRespostaObjetiva AR
+    JOIN Aluno A ON AR.IdAluno = A.Id
+    JOIN PerguntaObjetiva PO ON AR.IdPerguntaObjetiva = PO.Id
+    JOIN Prova Pr ON PO.IdProva = Pr.Id
+WHERE A.Id = 1
+ORDER BY Pr.Id, PO.Id;
+
+---------------------------------------------------------------------------------------------------------------------

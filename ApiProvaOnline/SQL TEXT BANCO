@@ -1,0 +1,87 @@
+CREATE DATABASE SistemaDeProvas;
+USE SistemaDeProvas;
+
+CREATE TABLE Professor (
+    Id INT PRIMARY KEY AUTO_INCREMENT,
+    Nome VARCHAR(150),
+    Email VARCHAR(150),
+    Senha VARCHAR(150),
+    DataHoraRegistro DATETIME
+);
+
+CREATE TABLE Administrativo (
+    Id INT PRIMARY KEY AUTO_INCREMENT,
+    Nome VARCHAR(150),
+    Email VARCHAR(150),
+    Senha VARCHAR(150),
+    DataHoraRegistro DATETIME
+);
+
+CREATE TABLE Prova (
+    Id INT PRIMARY KEY AUTO_INCREMENT,
+    Titulo VARCHAR(100),
+    DataHoraInicio DATETIME,
+    DataHoraFim DATETIME,
+    DataHoraRegistro DATETIME,
+    Codigo VARCHAR(45),
+    IdProfessor INT,
+    FOREIGN KEY (IdProfessor) REFERENCES Professor(Id)
+);
+
+CREATE TABLE Aluno (
+    Id INT PRIMARY KEY AUTO_INCREMENT,
+    Nome VARCHAR(100),
+    DataNascimento DATE,
+    DataHoraRegistro DATETIME,
+    IdProva INT,
+    FOREIGN KEY (IdProva) REFERENCES Prova(Id)
+);
+
+CREATE TABLE Pergunta (
+    Id INT PRIMARY KEY AUTO_INCREMENT,
+    Titulo VARCHAR(500),
+    Descricao VARCHAR(500),
+    Pontuacao DOUBLE,
+    DataHoraRegistro DATETIME,
+    IdProva INT,
+    FOREIGN KEY (IdProva) REFERENCES Prova(Id)
+);
+
+CREATE TABLE PerguntaObjetiva (
+    Id INT PRIMARY KEY AUTO_INCREMENT,
+    Titulo VARCHAR(500),
+    Descricao VARCHAR(500),
+    OpcaoA VARCHAR(500),
+    OpcaoB VARCHAR(500),
+    OpcaoC VARCHAR(500),
+    OpcaoD VARCHAR(500),
+    OpcaoCorreta CHAR(1),
+    Pontuacao DOUBLE,
+    DataHoraRegistro DATETIME,
+    IdProva INT,
+    FOREIGN KEY (IdProva) REFERENCES Prova(Id)
+);
+
+CREATE TABLE AlunoResposta (
+    Id INT PRIMARY KEY AUTO_INCREMENT,
+    IdAluno INT,
+    IdPergunta INT,
+    Resposta VARCHAR(500),
+    PontuacaoFinal DOUBLE,
+    DataHoraRegistro DATETIME,
+    FOREIGN KEY (IdAluno) REFERENCES Aluno(Id),
+    FOREIGN KEY (IdPergunta) REFERENCES Pergunta(Id)
+);
+
+
+CREATE TABLE AlunoRespostaObjetiva (
+    Id INT PRIMARY KEY AUTO_INCREMENT,
+    IdAluno INT,
+    IdPerguntaObjetiva INT,
+    Resposta CHAR(1),
+    PontuacaoFinal DOUBLE,
+    DataHoraRegistro DATETIME,
+    FOREIGN KEY (IdAluno) REFERENCES Aluno(Id),
+    FOREIGN KEY (IdPerguntaObjetiva) REFERENCES PerguntaObjetiva(Id)
+);
+
