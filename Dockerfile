@@ -14,8 +14,8 @@ RUN dotnet restore ApiProvaOnline/ApiProvaOnline.sln
 # Copia todo o código-fonte restante
 COPY . .
 
-# Publica a aplicação
-RUN dotnet publish "ApiProvaOnline/ApiProvaOnline.csproj" -c Release -o out
+# Publica a aplicação, usando o caminho correto
+RUN dotnet publish "ApiProvaOnline/ApiProvaOnline/ApiProvaOnline.csproj" -c Release -o out
 
 # Usa uma imagem leve para rodar a aplicação
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
