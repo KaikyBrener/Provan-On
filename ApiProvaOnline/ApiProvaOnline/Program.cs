@@ -9,15 +9,15 @@ builder.Services.AddCors(options =>
         policy =>
         {
             policy.WithOrigins("http://127.0.0.1:5500")
-                  .AllowAnyHeader()
-                  .AllowAnyMethod()
-                  .AllowCredentials();  // Permite envio de credenciais (cookies, etc)
+                    .AllowAnyHeader()
+                    .AllowAnyMethod()
+                    .AllowCredentials();  // Permite envio de credenciais (cookies, etc)
 
-            // Para liberar todas as origens (apenas para teste, n„o recomendado em produÁ„o):
+            // Para liberar todas as origens (apenas para teste, n√£o recomendado em produ√ß√£o):
             // policy.SetIsOriginAllowed(_ => true)
-            //       .AllowAnyHeader()
-            //       .AllowAnyMethod()
-            //       .AllowCredentials();
+            //     .AllowAnyHeader()
+            //     .AllowAnyMethod()
+            //     .AllowCredentials();
         });
 });
 
@@ -29,15 +29,15 @@ builder.Services.AddSwaggerGen();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+// Move as linhas do Swagger para fora do bloco if
+// para que elas funcionem tanto em desenvolvimento quanto em produ√ß√£o.
+app.UseSwagger();
+app.UseSwaggerUI();
+
 
 app.UseHttpsRedirection();
 
-// 2. Ativar CORS antes da autorizaÁ„o
+// 2. Ativar CORS antes da autoriza√ß√£o
 app.UseCors("PermitirLocalhost");
 
 app.UseAuthorization();
