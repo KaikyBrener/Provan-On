@@ -5,7 +5,7 @@ namespace ApiProvaOnline
     public static class DbConnection
     {
 
-        public static string connectionstring = "Server=turntable.proxy.rlwy.net;Port=31724;Database=SistemaDeProvas;Uid=root;Pwd=zkiHnKGGowUqZRrzzdLVxIwxsVqdVKlE";
+        public static string connectionstring = "Server=mysql.railway.internal;Port=3306;Database=SistemaDeProvas;Uid=root;Pwd=zkiHnKGGowUqZRrzzdLVxIwxsVqdVKlE";
 
 
         public static MySqlConnection GetConnection()
