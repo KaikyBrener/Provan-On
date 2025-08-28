@@ -19,7 +19,7 @@
       }
 
       try {
-        const response = await axios.post("https://localhost:7141/Professor/LoginProfessor", { email, senha });
+        const response = await axios.post("https://provan-on-production.up.railway.app/Professor/LoginProfessor", { email, senha });
 
         if (response.data.sucesso) {
           Swal.fire({
