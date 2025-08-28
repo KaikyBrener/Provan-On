@@ -2,22 +2,19 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-// 1. Configurar CORS
+// 1. Configurar CORS com múltiplas origens
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("PermitirLocalhost",
+    options.AddPolicy("CorsPolicy",
         policy =>
         {
-            policy.WithOrigins("http://127.0.0.1:5500")
-                    .AllowAnyHeader()
-                    .AllowAnyMethod()
-                    .AllowCredentials();  // Permite envio de credenciais (cookies, etc)
-
-            // Para liberar todas as origens (apenas para teste, não recomendado em produção):
-            // policy.SetIsOriginAllowed(_ => true)
-            //     .AllowAnyHeader()
-            //     .AllowAnyMethod()
-            //     .AllowCredentials();
+            policy.WithOrigins(
+                "http://127.0.0.1:5500", // Para seu ambiente de desenvolvimento
+                "https://provan-on.vercel.app" // Para o seu frontend em produção
+            )
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+            // .AllowCredentials(); // Se não estiver usando cookies ou credenciais, pode ser removido
         });
 });
 
@@ -34,11 +31,10 @@ var app = builder.Build();
 app.UseSwagger();
 app.UseSwaggerUI();
 
-
 app.UseHttpsRedirection();
 
-// 2. Ativar CORS antes da autorização
-app.UseCors("PermitirLocalhost");
+// 2. Ativar CORS com a política correta
+app.UseCors("CorsPolicy");
 
 app.UseAuthorization();
 
