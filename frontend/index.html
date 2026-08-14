@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirecionando...</title>
+    <script type="module">
+        import { AuthService } from './services/auth.service.js';
+        
+        if (AuthService.isAuthenticated()) {
+            const user = AuthService.getUser();
+            if (user?.role === 'admin')          window.location.href = './pages/admin/dashboard.html';
+            else if (user?.role === 'professor') window.location.href = './pages/professor/dashboard.html';
+            else                                 window.location.href = './pages/auth/login.html';
+        } else {
+            window.location.href = './pages/auth/login.html';
+        }
+    </script>
+</head>
+<body></body>
+</html>

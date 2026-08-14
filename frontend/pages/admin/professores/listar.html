@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professores - Admin</title>
+    <!-- Google Font Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../../../assets/css/global.css" rel="stylesheet">
+    <link href="../../../assets/css/layout.css" rel="stylesheet">
+</head>
+<body data-theme="dark">
+    <div class="dashboard-wrapper">
+        <aside id="sidebar-container"></aside>
+        
+        <div class="main-wrapper">
+            <header id="navbar-container"></header>
+
+            <main class="content-area">
+                <!-- Breadcrumbs & Page Header -->
+                <nav aria-label="breadcrumb" class="mb-2">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="../dashboard.html">Dashboard</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Professores</li>
+                    </ol>
+                </nav>
+
+                <div class="page-header">
+                    <div>
+                        <h1>Gerenciar Professores</h1>
+                        <p>Visualize, cadastre e administre a lista de professores do sistema.</p>
+                    </div>
+                    <div>
+                        <a href="cadastrar.html" class="btn btn-primary d-flex align-items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus-circle"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="16"/><line x1="8" x2="16" y1="12" y2="12"/></svg>
+                            Novo Professor
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Table Card -->
+                <div class="card p-0 overflow-hidden">
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle mb-0" id="professoresTable">
+                            <thead>
+                                <tr>
+                                    <th class="ps-4">Nome</th>
+                                    <th>E-mail</th>
+                                    <th>Data de Cadastro</th>
+                                    <th class="text-end pe-4">Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="4" class="text-center py-5 text-muted">
+                                        <div class="spinner-border text-primary spinner-border-sm mb-2" role="status"></div>
+                                        <p class="mb-0 small">Carregando professores...</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Confirm Delete Modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-bottom-0 pb-0">
+                    <h5 class="modal-title fw-bold text-danger">Confirmar Exclusão</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="mb-1">Tem certeza de que deseja remover o professor <strong id="deleteProfessorName"></strong>?</p>
+                    <p class="text-secondary small mb-0">Esta ação não pode ser desfeita e removerá todo o acesso dele ao sistema.</p>
+                </div>
+                <div class="modal-footer border-top-0 pt-0 mt-3">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Remover Professor</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="listar.js"></script>
+</body>
+</html>

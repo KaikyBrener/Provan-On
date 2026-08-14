@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Aluno - Admin</title>
+    <!-- Google Font Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../../../assets/css/global.css" rel="stylesheet">
+    <link href="../../../assets/css/layout.css" rel="stylesheet">
+</head>
+<body data-theme="dark">
+    <div class="dashboard-wrapper">
+        <aside id="sidebar-container"></aside>
+        
+        <div class="main-wrapper">
+            <header id="navbar-container"></header>
+
+            <main class="content-area">
+                <!-- Breadcrumbs & Header -->
+                <nav aria-label="breadcrumb" class="mb-2">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="../dashboard.html">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="listar.html">Alunos</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Editar</li>
+                    </ol>
+                </nav>
+
+                <div class="mb-4">
+                    <a href="listar.html" class="text-decoration-none text-secondary mb-2 d-inline-flex align-items-center gap-1 small">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" x2="5" y1="12" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                        Voltar para a lista
+                    </a>
+                    <h4 class="fw-bold mb-1 mt-1">Editar Aluno</h4>
+                    <p class="text-secondary mb-0">Atualize as informações do aluno selecionado.</p>
+                </div>
+
+                <!-- Loading card -->
+                <div class="card p-4 mx-auto" style="max-width: 800px;" id="loadingCard">
+                    <div class="text-center py-5">
+                        <div class="spinner-border text-primary" role="status"></div>
+                        <p class="mt-2 text-secondary small">Carregando dados do aluno...</p>
+                    </div>
+                </div>
+
+                <!-- Form Card -->
+                <div class="card p-4 mx-auto d-none" style="max-width: 800px;" id="formCard">
+                    <form id="editarAlunoForm" novalidate>
+                        <input type="hidden" id="alunoId">
+                        
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <label for="nome" class="form-label">Nome Completo</label>
+                                <div class="input-icon-wrapper">
+                                    <input type="text" class="form-control" id="nome" required>
+                                    <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                    <div class="invalid-feedback">Por favor, insira o nome completo.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6 mb-3 mb-md-0">
+                                <label for="email" class="form-label">E-mail</label>
+                                <div class="input-icon-wrapper">
+                                    <input type="email" class="form-control" id="email" required>
+                                    <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                                    <div class="invalid-feedback">Por favor, insira um e-mail válido.</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="matricula" class="form-label">Matrícula</label>
+                                <div class="input-icon-wrapper">
+                                    <input type="text" class="form-control" id="matricula">
+                                    <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row border-top pt-3 mt-4">
+                            <div class="col-12">
+                                <h6 class="fw-bold mb-3 small text-uppercase letter-spacing-lg" style="color: var(--text-secondary)">Redefinir Senha <span class="text-secondary fw-normal lowercase">(Opcional)</span></h6>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="input-icon-wrapper">
+                                    <input type="password" class="form-control" id="senha" minlength="6" placeholder="Deixe em branco para não alterar">
+                                    <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                                    <button class="password-toggle" type="button" id="toggleSenha" aria-label="Toggle password visibility">
+                                        <svg id="eyeOpen" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                                        <svg id="eyeClosed" class="d-none" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.52 13.52 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" x2="22" y1="2" y2="22"/></svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-end gap-2 border-top pt-3 mt-4">
+                            <a href="listar.html" class="btn btn-light px-4">Cancelar</a>
+                            <button type="submit" class="btn btn-primary px-4" id="submitBtn">
+                                Salvar Alterações
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="editar.js"></script>
+</body>
+</html>

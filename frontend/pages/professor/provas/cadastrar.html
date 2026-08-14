@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Prova - Professor</title>
+    <!-- Google Font Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../../../assets/css/global.css" rel="stylesheet">
+    <link href="../../../assets/css/layout.css" rel="stylesheet">
+</head>
+<body data-theme="dark">
+    <div class="dashboard-wrapper">
+        <aside id="sidebar-container"></aside>
+        
+        <div class="main-wrapper">
+            <header id="navbar-container"></header>
+
+            <main class="content-area">
+                <!-- Breadcrumbs & Header -->
+                <nav aria-label="breadcrumb" class="mb-2">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="../dashboard.html">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="listar.html">Provas</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Criar</li>
+                    </ol>
+                </nav>
+
+                <div class="mb-4">
+                    <a href="listar.html" class="text-decoration-none text-secondary mb-2 d-inline-flex align-items-center gap-1 small">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" x2="5" y1="12" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                        Voltar para a lista
+                    </a>
+                    <h4 class="fw-bold mb-1 mt-1">Criar Nova Prova</h4>
+                    <p class="text-secondary mb-0">Defina o título, código de acesso e adicione questões à sua prova.</p>
+                </div>
+
+                <!-- Form Card -->
+                <div class="card p-4 mx-auto mb-4" style="max-width: 900px;">
+                    <form id="cadastrarProvaForm" novalidate>
+                        <h5 class="fw-bold mb-3 pb-2" style="border-bottom: 1px solid var(--border-color); color: var(--text-primary)">Configurações Gerais</h5>
+                        <div class="row mb-3">
+                            <div class="col-md-8 mb-3 mb-md-0">
+                                <label for="titulo" class="form-label">Título da Prova</label>
+                                <div class="input-icon-wrapper">
+                                    <input type="text" class="form-control" id="titulo" required placeholder="Ex: Avaliação Bimestral de História">
+                                    <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
+                                    <div class="invalid-feedback">O título é obrigatório.</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="codigoAcesso" class="form-label">Código de Acesso</label>
+                                <div class="input-icon-wrapper">
+                                    <input type="text" class="form-control text-uppercase" id="codigoAcesso" required placeholder="EX: HIS-B1">
+                                    <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21 2-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0 1.5 1.5M15.5 7.5 14 6"/></svg>
+                                    <div class="invalid-feedback">Código obrigatório.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h5 class="fw-bold mb-3 pb-2 mt-5 d-flex justify-content-between align-items-center" style="border-bottom: 1px solid var(--border-color); color: var(--text-primary)">
+                            Questões da Prova
+                            <button type="button" class="btn btn-sm btn-outline-primary d-flex align-items-center gap-1" id="addQuestaoBtn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
+                                Adicionar Questão
+                            </button>
+                        </h5>
+
+                        <div id="questoesContainer">
+                            <!-- Questões injetadas dinamicamente aqui -->
+                            <div class="text-center py-5 text-muted" id="emptyState">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-question text-disabled mb-3"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><path d="M10 10.3c.2-.4.5-.8.9-1a2.1 2.1 0 0 1 2.6.4c.3.4.5.8.5 1.3 0 1.3-2 2-2 2"/><path d="M12 17h.01"/></svg>
+                                <p class="mb-0">Nenhuma questão adicionada ainda. Clique no botão acima para começar.</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-end gap-2 border-top pt-3 mt-4">
+                            <a href="listar.html" class="btn btn-light px-4">Cancelar</a>
+                            <button type="submit" class="btn btn-primary px-4" id="submitBtn">
+                                Salvar e Publicar Prova
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="cadastrar.js"></script>
+</body>
+</html>
