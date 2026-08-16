@@ -1,0 +1,250 @@
+2026-08-15 21:16:54.409 -03:00 [INF] Iniciando a API...
+2026-08-15 21:16:54.683 -03:00 [FTL] Falha crítica ao iniciar a API.
+System.InvalidOperationException: ConnectionStrings:DefaultConnection não configurada. Use variáveis de ambiente ou User Secrets.
+   at Program.<Main>$(String[] args) in C:\Prova-On-corrigido-ratelimit-por-ip\ApiProvaOnline\ApiProvaOnline\Program.cs:line 62
+2026-08-15 21:23:39.683 -03:00 [INF] Iniciando a API...
+2026-08-15 21:23:40.364 -03:00 [INF] User profile is available. Using 'C:\Users\BKS\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-15 21:23:40.437 -03:00 [INF] Creating key {2d38cfb9-7942-4dc5-bfac-bfc0a0cc011c} with creation date 2026-08-16 00:23:40Z, activation date 2026-08-16 00:23:40Z, and expiration date 2026-11-14 00:23:40Z.
+2026-08-15 21:23:40.453 -03:00 [INF] Writing data to file 'C:\Users\BKS\AppData\Local\ASP.NET\DataProtection-Keys\key-2d38cfb9-7942-4dc5-bfac-bfc0a0cc011c.xml'.
+2026-08-15 21:23:40.560 -03:00 [INF] Now listening on: http://localhost:5150
+2026-08-15 21:23:40.564 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-15 21:23:40.564 -03:00 [INF] Hosting environment: Development
+2026-08-15 21:23:40.565 -03:00 [INF] Content root path: C:\Prova-On-corrigido-ratelimit-por-ip\ApiProvaOnline\ApiProvaOnline
+2026-08-15 21:23:53.552 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5150/ - null null
+2026-08-15 21:23:53.691 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5150/ - 404 0 null 143.7712ms
+2026-08-15 21:23:53.699 -03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5150/, Response status code: 404
+2026-08-15 21:24:04.355 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5150/ - null null
+2026-08-15 21:24:04.358 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5150/ - 404 0 null 4.0436ms
+2026-08-15 21:24:04.361 -03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5150/, Response status code: 404
+2026-08-15 21:24:07.852 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5150/swagger - null null
+2026-08-15 21:24:07.859 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5150/swagger - 301 0 null 7.0008ms
+2026-08-15 21:24:07.863 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5150/swagger/index.html - null null
+2026-08-15 21:24:07.939 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5150/swagger/index.html - 200 null text/html;charset=utf-8 76.1436ms
+2026-08-15 21:24:08.036 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5150/swagger/swagger-ui.css - null null
+2026-08-15 21:24:08.042 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5150/swagger/swagger-ui-bundle.js - null null
+2026-08-15 21:24:08.052 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5150/swagger/swagger-ui-standalone-preset.js - null null
+2026-08-15 21:24:08.067 -03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2026-08-15 21:24:08.067 -03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2026-08-15 21:24:08.071 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5150/swagger/swagger-ui.css - 200 152034 text/css 35.4218ms
+2026-08-15 21:24:08.071 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5150/swagger/swagger-ui-standalone-preset.js - 200 230280 text/javascript 18.6245ms
+2026-08-15 21:24:08.101 -03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2026-08-15 21:24:08.102 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5150/swagger/swagger-ui-bundle.js - 200 1456926 text/javascript 60.8677ms
+2026-08-15 21:24:08.262 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5150/swagger/v1/swagger.json - null null
+2026-08-15 21:24:08.303 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5150/swagger/favicon-32x32.png - null null
+2026-08-15 21:24:08.305 -03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2026-08-15 21:24:08.307 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5150/swagger/favicon-32x32.png - 200 628 image/png 3.9299ms
+2026-08-15 21:24:08.374 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5150/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 111.5683ms
+2026-08-15 21:24:20.050 -03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5150/api/Administrativo - application/json 232
+2026-08-15 21:24:20.057 -03:00 [INF] CORS policy execution successful.
+2026-08-15 21:24:20.068 -03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (admin)
+2026-08-15 21:24:20.072 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-08-15 21:24:20.073 -03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5150/api/Administrativo - 401 0 null 22.8859ms
+2026-08-15 21:24:37.122 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - null null
+2026-08-15 21:24:37.127 -03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (admin)
+2026-08-15 21:24:37.129 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-08-15 21:24:37.130 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - 401 0 null 7.6417ms
+2026-08-15 21:24:42.184 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - null null
+2026-08-15 21:24:42.467 -03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (admin)
+2026-08-15 21:24:42.469 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-08-15 21:24:42.470 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - 401 0 null 285.6639ms
+2026-08-15 21:24:43.009 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - null null
+2026-08-15 21:24:43.011 -03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (admin)
+2026-08-15 21:24:43.012 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-08-15 21:24:43.013 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - 401 0 null 4.2441ms
+2026-08-15 21:24:43.219 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - null null
+2026-08-15 21:24:43.221 -03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (admin)
+2026-08-15 21:24:43.222 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-08-15 21:24:43.223 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - 401 0 null 3.2135ms
+2026-08-15 21:24:43.456 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - null null
+2026-08-15 21:24:43.535 -03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (admin)
+2026-08-15 21:24:43.535 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-08-15 21:24:43.536 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - 401 0 null 80.0329ms
+2026-08-15 21:24:43.640 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - null null
+2026-08-15 21:24:43.642 -03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (admin)
+2026-08-15 21:24:43.643 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-08-15 21:24:43.644 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - 401 0 null 3.5838ms
+2026-08-15 21:24:43.831 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - null null
+2026-08-15 21:24:43.834 -03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (admin)
+2026-08-15 21:24:43.835 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-08-15 21:24:43.836 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - 401 0 null 4.9815ms
+2026-08-15 21:24:44.002 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - null null
+2026-08-15 21:24:44.005 -03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (admin)
+2026-08-15 21:24:44.005 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-08-15 21:24:44.006 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - 401 0 null 3.4405ms
+2026-08-15 21:24:44.176 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - null null
+2026-08-15 21:24:44.178 -03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (admin)
+2026-08-15 21:24:44.179 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-08-15 21:24:44.179 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - 401 0 null 3.7284ms
+2026-08-15 21:24:44.354 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - null null
+2026-08-15 21:24:44.356 -03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (admin)
+2026-08-15 21:24:44.357 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-08-15 21:24:44.357 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - 401 0 null 3.0585ms
+2026-08-15 21:24:44.537 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - null null
+2026-08-15 21:24:44.541 -03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (admin)
+2026-08-15 21:24:44.541 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-08-15 21:24:44.542 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - 401 0 null 4.6174ms
+2026-08-15 21:24:44.704 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - null null
+2026-08-15 21:24:44.986 -03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (admin)
+2026-08-15 21:24:44.987 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-08-15 21:24:44.988 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - 401 0 null 283.9837ms
+2026-08-15 21:24:45.209 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - null null
+2026-08-15 21:24:45.211 -03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (admin)
+2026-08-15 21:24:45.212 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-08-15 21:24:45.212 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - 401 0 null 3.309ms
+2026-08-15 21:24:45.398 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - null null
+2026-08-15 21:24:45.404 -03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (admin)
+2026-08-15 21:24:45.405 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-08-15 21:24:45.407 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - 401 0 null 8.7093ms
+2026-08-15 21:24:45.573 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - null null
+2026-08-15 21:24:45.574 -03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (admin)
+2026-08-15 21:24:45.575 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-08-15 21:24:45.575 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - 401 0 null 2.4444ms
+2026-08-15 21:24:45.751 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - null null
+2026-08-15 21:24:45.752 -03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (admin)
+2026-08-15 21:24:45.753 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-08-15 21:24:45.754 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - 401 0 null 3.395ms
+2026-08-15 21:24:45.932 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - null null
+2026-08-15 21:24:45.935 -03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (admin)
+2026-08-15 21:24:45.935 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-08-15 21:24:45.936 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - 401 0 null 3.583ms
+2026-08-15 21:24:46.111 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - null null
+2026-08-15 21:24:46.113 -03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (admin)
+2026-08-15 21:24:46.113 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-08-15 21:24:46.114 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - 401 0 null 3.0211ms
+2026-08-15 21:24:46.533 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - null null
+2026-08-15 21:24:46.534 -03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (admin)
+2026-08-15 21:24:46.535 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-08-15 21:24:46.535 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - 401 0 null 2.4346ms
+2026-08-15 21:24:46.641 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - null null
+2026-08-15 21:24:46.643 -03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (admin)
+2026-08-15 21:24:46.643 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-08-15 21:24:46.644 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - 401 0 null 3.3676ms
+2026-08-15 21:24:46.813 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - null null
+2026-08-15 21:24:46.814 -03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (admin)
+2026-08-15 21:24:46.815 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-08-15 21:24:46.816 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - 401 0 null 3.2058ms
+2026-08-15 21:24:46.997 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - null null
+2026-08-15 21:24:46.999 -03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (admin)
+2026-08-15 21:24:47.000 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-08-15 21:24:47.000 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - 401 0 null 2.9968ms
+2026-08-15 21:24:47.159 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - null null
+2026-08-15 21:24:47.160 -03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (admin)
+2026-08-15 21:24:47.161 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-08-15 21:24:47.162 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - 401 0 null 2.9788ms
+2026-08-15 21:24:47.338 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - null null
+2026-08-15 21:24:47.359 -03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (admin)
+2026-08-15 21:24:47.359 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-08-15 21:24:47.360 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - 401 0 null 22.4351ms
+2026-08-15 21:24:47.514 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - null null
+2026-08-15 21:24:47.516 -03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (admin)
+2026-08-15 21:24:47.517 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-08-15 21:24:47.517 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - 401 0 null 3.4079ms
+2026-08-15 21:24:47.681 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - null null
+2026-08-15 21:24:47.684 -03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (admin)
+2026-08-15 21:24:47.685 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-08-15 21:24:47.685 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - 401 0 null 3.9954ms
+2026-08-15 21:24:47.853 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - null null
+2026-08-15 21:24:47.855 -03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (admin)
+2026-08-15 21:24:47.855 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-08-15 21:24:47.856 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - 401 0 null 2.5459ms
+2026-08-15 21:24:48.027 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - null null
+2026-08-15 21:24:48.029 -03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (admin)
+2026-08-15 21:24:48.029 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-08-15 21:24:48.030 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - 401 0 null 2.5566ms
+2026-08-15 21:24:48.197 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - null null
+2026-08-15 21:24:48.199 -03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (admin)
+2026-08-15 21:24:48.200 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-08-15 21:24:48.200 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - 401 0 null 2.9116ms
+2026-08-15 21:24:54.188 -03:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5150/api/Administrativo/1 - null null
+2026-08-15 21:24:54.191 -03:00 [INF] CORS policy execution successful.
+2026-08-15 21:24:54.192 -03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (admin)
+2026-08-15 21:24:54.192 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-08-15 21:24:54.193 -03:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5150/api/Administrativo/1 - 401 0 null 5.0486ms
+2026-08-15 21:24:58.274 -03:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5150/api/Administrativo/2 - null null
+2026-08-15 21:24:58.275 -03:00 [INF] CORS policy execution successful.
+2026-08-15 21:24:58.276 -03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (admin)
+2026-08-15 21:24:58.277 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-08-15 21:24:58.278 -03:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5150/api/Administrativo/2 - 401 0 null 4.1337ms
+2026-08-15 21:25:02.297 -03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5150/api/Administrativo - application/json 232
+2026-08-15 21:25:02.299 -03:00 [INF] CORS policy execution successful.
+2026-08-15 21:25:02.299 -03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (admin)
+2026-08-15 21:25:02.300 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-08-15 21:25:02.301 -03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5150/api/Administrativo - 401 0 null 3.9818ms
+2026-08-15 21:25:19.036 -03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5150/api/Administrativo - application/json 238
+2026-08-15 21:25:19.037 -03:00 [INF] CORS policy execution successful.
+2026-08-15 21:25:19.038 -03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (admin)
+2026-08-15 21:25:19.039 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-08-15 21:25:19.039 -03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5150/api/Administrativo - 401 0 null 3.6382ms
+2026-08-15 21:25:34.076 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - null null
+2026-08-15 21:25:34.079 -03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (admin)
+2026-08-15 21:25:34.079 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-08-15 21:25:34.080 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - 401 0 null 3.594ms
+2026-08-15 21:26:38.307 -03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5150/api/Administrativo - application/json 239
+2026-08-15 21:26:38.309 -03:00 [INF] CORS policy execution successful.
+2026-08-15 21:26:38.309 -03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (admin)
+2026-08-15 21:26:38.310 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-08-15 21:26:38.311 -03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5150/api/Administrativo - 401 0 null 3.9909ms
+2026-08-15 21:27:16.360 -03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5150/api/Administrativo - application/json 239
+2026-08-15 21:27:16.363 -03:00 [INF] CORS policy execution successful.
+2026-08-15 21:27:16.363 -03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (admin)
+2026-08-15 21:27:16.364 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-08-15 21:27:16.365 -03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5150/api/Administrativo - 401 0 null 4.9288ms
+2026-08-15 21:27:43.508 -03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5150/api/Administrativo - application/json 239
+2026-08-15 21:27:43.510 -03:00 [INF] CORS policy execution successful.
+2026-08-15 21:27:43.511 -03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (admin)
+2026-08-15 21:27:43.512 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-08-15 21:27:43.514 -03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5150/api/Administrativo - 401 0 null 5.5782ms
+2026-08-15 21:27:48.691 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - null null
+2026-08-15 21:27:48.693 -03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (admin)
+2026-08-15 21:27:48.694 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-08-15 21:27:48.694 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5150/api/Administrativo/1 - 401 0 null 3.1464ms
+2026-08-15 21:27:54.368 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5150/swagger/index.html - null null
+2026-08-15 21:27:54.370 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5150/swagger/index.html - 200 null text/html;charset=utf-8 2.2266ms
+2026-08-15 21:27:54.670 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5150/swagger/v1/swagger.json - null null
+2026-08-15 21:27:54.684 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5150/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 13.9673ms
+2026-08-15 21:28:37.712 -03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5150/api/Administrativo - text/json 234
+2026-08-15 21:28:37.714 -03:00 [INF] CORS policy execution successful.
+2026-08-15 21:28:37.714 -03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (admin)
+2026-08-15 21:28:37.715 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-08-15 21:28:37.716 -03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5150/api/Administrativo - 401 0 null 4.0881ms
+2026-08-15 21:47:48.744 -03:00 [INF] Application is shutting down...
