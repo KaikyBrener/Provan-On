@@ -5,7 +5,12 @@ namespace ApiProvaOnline
     public static class DbConnection
     {
 
-        public static string connectionstring = "Server=mysql.railway.internal;Port=3306;Database=ProvaOn;Uid=root;Pwd=zkiHnKGGowUqZRrzzdLVxIwxsVqdVKlE";
+        // A string de conexão vem de variável de ambiente (nunca do código-fonte).
+        // Ex.: ConnectionStrings__Default="Server=...;Port=3306;Database=ProvaOn;Uid=...;Pwd=..."
+        public static string connectionstring =>
+            Environment.GetEnvironmentVariable("ConnectionStrings__Default")
+            ?? throw new InvalidOperationException(
+                "Variável de ambiente ConnectionStrings__Default não definida. Configure a string de conexão do MySQL.");
 
 
         public static MySqlConnection GetConnection()
