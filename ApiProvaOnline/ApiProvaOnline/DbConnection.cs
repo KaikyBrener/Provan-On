@@ -36,7 +36,7 @@ namespace ApiProvaOnline
         {
             try
             {
-                if (connection != null && connection.State == System.Data.ConnectionState.Closed)
+                if (connection != null && connection.State != System.Data.ConnectionState.Closed)
                 {
                     connection.Close();
                 }
